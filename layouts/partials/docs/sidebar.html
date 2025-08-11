@@ -1,4 +1,8 @@
 <!-- sidebar-wrapper -->
+{{ $marginClass := "me" }}
+{{ if eq (.Site.Language.LanguageDirection | default "ltr") "rtl" }}
+    {{ $marginClass = "ms" }}
+{{ end }}
 <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-brand">
         <a href='{{ with .Site.Params.docs.logoLinkURL }}{{ . }}{{ else }}{{ relLangURL "" }}{{ end }}' aria-label="HomePage" alt="HomePage">
@@ -19,7 +23,8 @@
                         <li class="sidebar-dropdown {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }} {{ if $active }}current active{{ end }}">
                             <button class="btn">
                                 {{ if eq .Site.Params.docs.sidebarIcons true -}}
-                                    <i class="material-icons me-2">{{- .Params.icon | default "notes" }}</i>
+                                {{ if eq (.Site.Language.LanguageDirection | default "ltr") "rtl" }}
+                                    <i class="material-icons {{ }}-2">{{- .Params.icon | default "notes" }}</i>
                                 {{ end }}
                                 {{- .Title }}
                             </button>
@@ -31,7 +36,7 @@
                                             <li class="sidebar-dropdown nested {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }} {{ if $active }}current active{{ end }}">
                                                 <button class="btn">
                                                     {{ if eq .Site.Params.docs.sidebarIcons true -}}
-                                                        <!-- <span class="material-icons me-2">{{- .Params.icon }}</span> -->
+                                                        <!-- <span class="material-icons {{ $marginClass }}-2">{{- .Params.icon }}</span> -->
                                                     {{ end }}
                                                     {{- .Title }}
                                                 </button>
@@ -43,7 +48,7 @@
                                                                 <li class="sidebar-dropdown nested {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }} {{ if $active }}current active{{ end }}">
                                                                     <button class="btn">
                                                                         {{ if eq .Site.Params.docs.sidebarIcons true -}}
-                                                                            <!-- <span class="material-icons me-2">{{- .Params.icon }}</span> -->
+                                                                            <!-- <span class="material-icons {{ $marginClass }}-2">{{- .Params.icon }}</span> -->
                                                                         {{ end }}
                                                                         {{- .Title }}
                                                                     </button>
@@ -55,7 +60,7 @@
                                                                                     <li class="sidebar-dropdown nested {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }} {{ if $active }}current active{{ end }}">
                                                                                         <button class="btn">
                                                                                             {{ if eq .Site.Params.docs.sidebarIcons true -}}
-                                                                                                <!-- <span class="material-icons me-2">{{- .Params.icon }}</span> -->
+                                                                                                <!-- <span class="material-icons {{ $marginClass }}-2">{{- .Params.icon }}</span> -->
                                                                                             {{ end }}
                                                                                             {{- .Title }}
                                                                                         </button>
@@ -94,7 +99,7 @@
                         <li class="{{ if $active }}current{{ end }}">
                             <a class="sidebar-root-link" href="{{ .Permalink }}">
                                 {{ if eq .Site.Params.docs.sidebarIcons true -}}
-                                    <i class="material-icons me-2">{{ .Params.icon }}</i>
+                                    <i class="material-icons {{ $marginClass }}-2">{{ .Params.icon }}</i>
                                 {{ end }}
                                 {{ .Title }}
                             </a>
