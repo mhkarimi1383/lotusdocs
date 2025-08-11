@@ -23,8 +23,7 @@
                         <li class="sidebar-dropdown {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }} {{ if $active }}current active{{ end }}">
                             <button class="btn">
                                 {{ if eq .Site.Params.docs.sidebarIcons true -}}
-                                {{ if eq (.Site.Language.LanguageDirection | default "ltr") "rtl" }}
-                                    <i class="material-icons {{ }}-2">{{- .Params.icon | default "notes" }}</i>
+                                    <i class="material-icons {{ $marginClass }}-2">{{- .Params.icon | default "notes" }}</i>
                                 {{ end }}
                                 {{- .Title }}
                             </button>
