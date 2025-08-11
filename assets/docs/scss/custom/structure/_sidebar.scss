@@ -251,7 +251,7 @@
                 }
                 &.active {
                     > button:after {
-                        transform: rotate(90deg);
+                        content: "\e313" !important;
                         right: 17px;
                     }
                 }
