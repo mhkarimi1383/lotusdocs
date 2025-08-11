@@ -150,7 +150,12 @@ i {
 
     > li {
         position: relative;
-        padding-left: 32px;
+        [dir="rtl"] & {
+            padding-right: 32px;
+        }
+        [dir="ltr"] & {
+            padding-left: 32px;
+        }
         // margin-bottom: 5px;
     }
 
@@ -159,7 +164,12 @@ i {
         position: absolute;
         width: 6px;
         height: 6px;
-        left: 8px;
+        [dir="rtl"] & {
+            right: 8px;
+        }
+        [dir="ltr"] & {
+            left: 8px;
+        }
         top: 10px;
         border-radius: 30%;
         background: var(--gray-500);
@@ -172,7 +182,12 @@ i {
     > li {
         counter-increment: listitem;
         position: relative;
-        padding-left: 32px;
+        [dir="rtl"] & {
+            padding-right: 32px;
+        }
+        [dir="ltr"] & {
+            padding-left: 32px;
+        }
     }
 
     > li::before {
@@ -208,9 +223,14 @@ i {
 // Blockquote
 .docs-content .main-content blockquote {
     margin-bottom: 1rem;
-    font-size: 1.25rem;
-    border-left: 3px solid var(--blockquote-border-color);
-    padding-left: 1rem;
+    [dir="rtl"] & {
+        border-right: 3px solid var(--blockquote-border-color);
+        padding-right: 1rem;
+    }
+    [dir="ltr"] & {
+        border-left: 3px solid var(--blockquote-border-color);
+        padding-left: 1rem;
+    }
 }
 
 // Code

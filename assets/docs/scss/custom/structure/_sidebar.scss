@@ -266,7 +266,12 @@
                     ul {
                         padding: 3px 0;
                         li {
-                            padding-left: 15px;
+                            [dir="rtl"] & {
+                                padding-right: 15px;
+                            }
+                            [dir="ltr"] & {
+                                padding-left: 15px;
+                            }
                             font-size: 14px;
                             a {
                                 font-weight: 400;
