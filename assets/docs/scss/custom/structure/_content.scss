@@ -299,3 +299,8 @@ i {
 .docs-content figcaption {
     font-size: small;
 }
+
+pre,code {
+    direction: ltr;
+    unicode-bidi: isolate;
+}
