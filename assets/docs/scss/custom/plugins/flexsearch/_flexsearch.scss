@@ -88,6 +88,7 @@
 .flexsearch-button-keys {
     display: flex;
     min-width: calc(40px + .8em);
+    direction: ltr;
 }
 
 .flexsearch-button-cmd-key {
