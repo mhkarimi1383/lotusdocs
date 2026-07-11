@@ -300,6 +300,11 @@ i {
     font-size: small;
 }
 
+.alert > .w-100 > ul {
+    padding-right: 0;
+    margin-bottom: 0px;
+}
+
 pre,code {
     direction: ltr;
     unicode-bidi: isolate;
